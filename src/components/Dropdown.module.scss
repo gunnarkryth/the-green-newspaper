@@ -1,0 +1,9 @@
+@use "/src/styles/variables" as v;
+
+.dropdown {
+  border: 2px solid v.$interactive;
+  width: 200px;
+  height: 50px;
+  outline: unset;
+  appearance: none;
+}
