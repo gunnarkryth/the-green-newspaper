@@ -1,0 +1,15 @@
+@use "./_variables" as v;
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  max-width: 1280px;
+  overflow-x: hidden;
+  background-color: red;
+}
