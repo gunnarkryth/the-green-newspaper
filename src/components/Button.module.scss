@@ -7,7 +7,7 @@
   cursor: pointer;
   outline: unset;
   border: unset;
-  padding: 0.25rem 1rem;
+  background-color: none;
   height: 50px;
   &.accent {
     background-color: v.$accent;
@@ -18,14 +18,16 @@
 }
 
 .icon {
+  filter: brightness(0.6);
+  aspect-ratio: 1/1;
   width: auto;
   height: 100%;
-  // aspect-ratio: 1/1;
   object-fit: contain;
 }
 
 .text {
   flex-grow: 0;
+  padding: 0.25rem 1rem;
   width: 100%;
   color: v.$white;
 }
