@@ -7,7 +7,7 @@
   cursor: pointer;
   outline: unset;
   border: unset;
-  background-color: none;
+  background-color: unset;
   height: 50px;
   &.accent {
     background-color: v.$accent;

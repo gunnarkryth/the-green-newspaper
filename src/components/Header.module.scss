@@ -1,0 +1,14 @@
+.header {
+  margin: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90vw;
+  * {
+    display: flex;
+    flex-direction: row;
+  }
+  .userPanel {
+    gap: 1.5rem;
+  }
+}

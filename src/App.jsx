@@ -1,15 +1,15 @@
 import { Button } from "./components/Button";
 import { Dropdown } from "./components/Dropdown";
+import { Header } from "./components/Header";
+
+import "./styles/GlobalStyle.scss"
 
 function App() {
   return (
     <>
-      <Button backgroundColor={"interactive"} text="Hey" />
-      <Button icon={"public/assets/icons/account.png"} />
-      <Dropdown />
+      <Header />
     </>
   );
-  
 }
 
 export default App;

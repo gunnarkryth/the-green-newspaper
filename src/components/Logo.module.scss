@@ -1,0 +1,22 @@
+@use "/src/styles/variables" as v;
+
+.logo {
+  border: 2px solid v.$accent;
+  font-size: 1rem;
+  h1 {
+    background-color: v.$accent;
+    padding: 0;
+    color: v.$white;
+    text-align: center;
+    span {
+      background-color: v.$accent;
+      padding: 0.5rem;
+      color: v.$white;
+    }
+    span:first-of-type {
+      background-color: v.$white;
+      padding: 0.5rem;
+      color: v.$accent;
+    }
+  }
+}
