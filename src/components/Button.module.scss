@@ -1,0 +1,30 @@
+@use "/src/styles/variables" as v;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: unset;
+  border: unset;
+  padding: 0.5rem 1rem;
+  &.accent {
+    background-color: v.$accent;
+  }
+  &.interactive {
+    background-color: v.$interactive;
+  }
+}
+
+.icon {
+  width: auto;
+  height: 100%;
+  // aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.text {
+  flex-grow: 0;
+  width: 100%;
+  color: v.$white;
+}
