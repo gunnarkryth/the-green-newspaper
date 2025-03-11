@@ -14,7 +14,11 @@ export const useFetch = (url) => {
         if (!response.ok) {
           throw new Error("Response not okay");
         }
-        const result = await response.json();
+
+        const rawText = await response.text();
+        console.log("Raw response: ", rawText);
+
+        const result = JSON.parse(rawText);
 
         console.log(result);
 
