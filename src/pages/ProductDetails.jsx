@@ -5,7 +5,7 @@ import { Loading } from "../components/Loading";
 export const CategoryPage = () => {
   const { category } = useParams();
   const { data, loading, error } = useFetch(
-    `http://localhost:4242/products/category/${category.slug}`
+    `http://localhost:4242/categories/${category}`
   );
 
   if (loading) return <Loading />;

@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -14,11 +12,7 @@ export const useFetch = (url) => {
         if (!response.ok) {
           throw new Error("Response not okay");
         }
-
-        const rawText = await response.text();
-        console.log("Raw response: ", rawText);
-
-        const result = JSON.parse(rawText);
+        const result = await response.json();
 
         console.log(result);
 

@@ -14,7 +14,7 @@ export const Dropdown = () => {
 
   const handleChange = (e) => {
     const category = e.target.value;
-    navigate(`/category/${category}`);
+    navigate(`/categories/${category}`);
   };
 
   return (
