@@ -1,14 +1,18 @@
+@use "/src/styles/variables" as v;
+
 .header {
-  margin: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 90vw;
+  align-items: center;
+  padding: 1rem 0 1rem;
+  background-color: v.$white;
+  width: 100vw;
   * {
     display: flex;
     flex-direction: row;
   }
   .userPanel {
-    gap: 1.5rem;
+    gap: 3rem;
   }
 }

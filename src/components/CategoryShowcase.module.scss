@@ -1,0 +1,11 @@
+@use "../styles/variables" as v;
+
+.categoryShowcase {
+  width: 100%;
+  .randomCategories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+}

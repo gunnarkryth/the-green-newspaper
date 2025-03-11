@@ -1,0 +1,6 @@
+@use "../styles/variables" as v;
+
+.page {
+  background-color: v.$background;
+  width: 100vw;
+}

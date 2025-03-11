@@ -1,0 +1,10 @@
+@use "/src/styles/variables" as v;
+
+.donationCard {
+  padding: 0 1rem;
+  * {
+    color: v.$white;
+    text-shadow: 0 0 1rem v.$black;
+    padding: 1rem;
+  }
+}
