@@ -1,3 +1,5 @@
+@use "../styles/variables" as v;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,5 +11,6 @@ body {
   flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
+  background-color: v.$background;
   overflow-x: hidden;
 }

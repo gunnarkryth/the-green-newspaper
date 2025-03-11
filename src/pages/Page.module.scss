@@ -1,6 +1,11 @@
 @use "../styles/variables" as v;
 
 .page {
-  background-color: v.$background;
-  width: 100vw;
+  justify-self: center;
+  width: 90vw;
+  > * {
+    padding: 1rem 0 1rem;
+    margin: 1rem 0 1rem;
+    border-top: 4px solid v.$accent;
+  }
 }
