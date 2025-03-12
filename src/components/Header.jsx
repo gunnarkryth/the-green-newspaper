@@ -3,9 +3,11 @@ import s from "./Header.module.scss";
 import { Button } from "./Button";
 import { Dropdown } from "./Dropdown";
 import { Logo } from "./Logo";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className={s.header}>
       <div className={s.content}>
@@ -16,7 +18,10 @@ export const Header = () => {
           <div>
             <Button icon={"public/assets/icons/message.png"} />
             <Button icon={"public/assets/icons/info.png"} />
-            <Button icon={"public/assets/icons/account.png"} />
+            <Button
+              icon={"public/assets/icons/account.png"}
+              onclick={() => navigate()}
+            />
           </div>
         </div>
       </div>

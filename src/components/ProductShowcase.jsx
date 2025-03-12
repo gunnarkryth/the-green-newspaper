@@ -21,6 +21,7 @@ export const ProductShowcase = ({ products }) => {
             key={product.id}
             image={product.image}
             name={product.name}
+            slug={product.slug}
           />
         ))}
       </div>

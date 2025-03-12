@@ -3,13 +3,12 @@ import { useFetch } from "../hooks/useFetch";
 import { Loading } from "../components/Loading";
 
 export const ProductDetails = () => {
-  const { product } = useParams();
+  const { slug } = useParams();
 
-  // Guard: If no product slug is provided, render an error or null
-  if (!product) return <div>Product not found</div>;
+  if (!slug) return <div>Product not found</div>;
 
   const { data, loading, error } = useFetch(
-    `http://localhost:4242/products/${product}`
+    `http://localhost:4242/products/${slug}`
   );
 
   if (loading) return <Loading />;
@@ -20,23 +19,23 @@ export const ProductDetails = () => {
 
   return (
     <>
-      <h1>{name}</h1>
       <img src={image} alt={`Image of ${name}`} />
+      <h2>{name}</h2>
       <p>{description}</p>
-      <p>Price: {price}</p>
-      <p>Category: {category.name}</p>
-      <p>
-        Owner: {owner.firstName} {owner.lastName}
-      </p>
+      <h3>Pris: {price}</h3>
+
       <section>
         <h2>Comments</h2>
         {comments && comments.length > 0 ? (
           comments.map((comment) => (
             <div key={comment.id}>
-              <p>{comment.comment}</p>
               <p>
-                By: {comment.user.firstname} {comment.user.lastname}
+                {comment.user.firstname} {comment.user.lastname} |{" "}
+                {comment.updatedAt
+                  ? new Date(comment.updatedAt).toLocaleString("da-DK")
+                  : new Date(comment.createdAt).toLocaleString("da-DK")}
               </p>
+              <p>{comment.comment}</p>
             </div>
           ))
         ) : (
