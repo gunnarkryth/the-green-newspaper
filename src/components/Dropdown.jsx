@@ -13,8 +13,8 @@ export const Dropdown = () => {
   if (error) return <div>Error: {error}</div>;
 
   const handleChange = (e) => {
-    const category = e.target.value;
-    navigate(`/categories/${category}`);
+    const category = e.target.value.replace(/\s+/g, "-").replace(/ø/g, "oe");
+    navigate(`/category/${category}`);
   };
 
   return (

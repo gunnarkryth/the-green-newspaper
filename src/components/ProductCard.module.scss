@@ -4,8 +4,8 @@
   position: relative;
   overflow-y: hidden;
   &:hover {
-    figcaption {
-      bottom: 0;
+    .popUp {
+      bottom: 4px;
       transition: 0.3s;
     }
   }
@@ -14,7 +14,7 @@
     width: 100%;
     object-fit: cover;
   }
-  figcaption {
+  .popUp {
     display: flex;
     position: absolute;
     bottom: -3rem;

@@ -8,10 +8,14 @@ export const useFetch = (url) => {
     const fetchData = async () => {
       try {
         const response = await fetch(url);
+        console.log("Response status: ", response.status);
 
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error("Error details: ", errorText);
           throw new Error("Response not okay");
         }
+        
         const result = await response.json();
 
         console.log(result);

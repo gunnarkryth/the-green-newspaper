@@ -10,8 +10,8 @@ export const Home = () => {
     <section className={s.page}>
       <ProductShowcase />
       <About />
-      <CategoryShowcase/>
-      <DonationCard/>
+      <CategoryShowcase />
+      <DonationCard />
     </section>
   );
 };

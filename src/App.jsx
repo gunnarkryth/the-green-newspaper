@@ -7,6 +7,7 @@ import "./styles/GlobalStyle.scss";
 import { GlobalLayout } from "./layout/GlobalLayout";
 import { Home } from "./pages/Home";
 import { CategoryPage } from "./pages/CategoryPage";
+import { ProductDetails } from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -15,10 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<GlobalLayout />}>
             <Route index element={<Home />} />
-            <Route
-              path="/products/category/:category"
-              element={<CategoryPage />}
-            />
+            <Route path="/category/:category" element={<CategoryPage />} />
+            <Route path="/product/:product" element={<ProductDetails />} />
             <Route />
           </Route>
         </Routes>
