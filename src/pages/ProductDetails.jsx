@@ -1,6 +1,8 @@
+import s from "./ProductDetails.module.scss";
+
 import { useParams } from "react-router";
 import { useFetch } from "../hooks/useFetch";
-import { Loading } from "../components/Loading";
+import { Loading } from "../components/Loading/Loading";
 
 export const ProductDetails = () => {
   const { slug } = useParams();
@@ -25,7 +27,6 @@ export const ProductDetails = () => {
       <h3>Pris: {price}</h3>
 
       <section>
-        <h2>Comments</h2>
         {comments && comments.length > 0 ? (
           comments.map((comment) => (
             <div key={comment.id}>
@@ -35,11 +36,11 @@ export const ProductDetails = () => {
                   ? new Date(comment.updatedAt).toLocaleString("da-DK")
                   : new Date(comment.createdAt).toLocaleString("da-DK")}
               </p>
-              <p>{comment.comment}</p>
+              <p className={s.comment}>{comment.comment}</p>
             </div>
           ))
         ) : (
-          <p>No comments yet.</p>
+          <p>Ingen kommentarer endnu.</p>
         )}
       </section>
     </>

@@ -1,8 +1,8 @@
 import s from "./Header.module.scss";
 
-import { Button } from "./Button";
-import { Dropdown } from "./Dropdown";
-import { Logo } from "./Logo";
+import { Button } from "../Button/Button";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { Logo } from "../Logo/Logo";
 import { NavLink, useNavigate } from "react-router";
 
 export const Header = () => {

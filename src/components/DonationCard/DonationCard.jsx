@@ -2,7 +2,10 @@ import s from "./DonationCard.module.scss";
 
 export const DonationCard = ({ image, title, body, amountDonated }) => {
   return (
-    <figure className={s.donationCard} style={{ backgroundImage: { image } }}>
+    <figure
+      className={s.donationCard}
+      style={{ backgroundImage: `url(${image})` }}
+    >
       <figcaption>
         <h3>{title}</h3>
         <h4>{body}</h4>

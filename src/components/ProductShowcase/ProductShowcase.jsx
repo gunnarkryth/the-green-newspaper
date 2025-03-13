@@ -1,8 +1,8 @@
 import s from "./ProductShowcase.module.scss";
 
-import { useFetch } from "../hooks/useFetch";
-import { Loading } from "./Loading";
-import { ProductCard } from "./ProductCard";
+import { useFetch } from "../../hooks/useFetch";
+import { Loading } from "../Loading/Loading";
+import { ProductCard } from "../ProductCard/ProductCard";
 
 export const ProductShowcase = ({ products }) => {
   const { data, loading, error } = useFetch("http://localhost:4242/products");

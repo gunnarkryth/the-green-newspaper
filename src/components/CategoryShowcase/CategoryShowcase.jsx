@@ -1,8 +1,8 @@
 import s from "./CategoryShowcase.module.scss";
 
-import { useFetch } from "../hooks/useFetch";
-import { Loading } from "./Loading";
-import { ProductCard } from "./ProductCard";
+import { useFetch } from "../../hooks/useFetch";
+import { Loading } from "../Loading/Loading";
+import { ProductCard } from "../ProductCard/ProductCard";
 
 export const CategoryShowcase = ({ categories }) => {
   const { data, loading, error } = useFetch("http://localhost:4242/categories");

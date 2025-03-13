@@ -1,7 +1,7 @@
 import s from "./Dropdown.module.scss";
 
-import { useFetch } from "../hooks/useFetch";
-import { Loading } from "./Loading";
+import { useFetch } from "../../hooks/useFetch";
+import { Loading } from "../Loading/Loading";
 import { useNavigate } from "react-router";
 
 export const Dropdown = () => {

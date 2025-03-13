@@ -1,9 +1,9 @@
 import s from "./Page.module.scss";
 
-import { ProductShowcase } from "../components/ProductShowcase";
-import { About } from "../components/About";
-import { CategoryShowcase } from "../components/CategoryShowcase";
-import { DonationCard } from "../components/DonationCard";
+import { ProductShowcase } from "../components/ProductShowcase/ProductShowcase";
+import { About } from "../components/About/About";
+import { CategoryShowcase } from "../components/CategoryShowcase/CategoryShowcase";
+import { DonationCard } from "../components/DonationCard/DonationCard";
 
 export const Home = () => {
   return (

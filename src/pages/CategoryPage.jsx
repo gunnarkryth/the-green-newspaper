@@ -2,8 +2,8 @@ import s from "./CategoryPage.module.scss";
 
 import { useParams } from "react-router";
 import { useFetch } from "../hooks/useFetch";
-import { Loading } from "../components/Loading";
-import { ProductCard } from "../components/ProductCard";
+import { Loading } from "../components/Loading/Loading";
+import { ProductCard } from "../components/ProductCard/ProductCard";
 
 export const CategoryPage = () => {
   const { category } = useParams();
