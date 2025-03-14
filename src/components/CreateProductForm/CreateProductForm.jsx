@@ -17,7 +17,7 @@ const CreateProductForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token"); // Assumes token is stored here
+    const token = localStorage.getItem("token");
     try {
       const res = await fetch("http://localhost:4242/products", {
         method: "POST",
@@ -33,7 +33,6 @@ const CreateProductForm = () => {
       }
       await res.json();
       setMessage("Product created successfully!");
-      // Optionally clear the form or update state as needed
     } catch (err) {
       setMessage(`Error: ${err.message}`);
     }

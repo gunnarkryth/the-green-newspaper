@@ -1,5 +1,5 @@
+import s from "./Loading.module.scss";
+
 export const Loading = () => {
-  return (
-    <div>Loading</div>
-  )
-}
+  return <span className={s.loading} />;
+};

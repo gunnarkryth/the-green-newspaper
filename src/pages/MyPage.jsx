@@ -1,3 +1,5 @@
+import s from "./MyPage.module.scss";
+
 import React, { useState, useEffect } from "react";
 
 const CategoryDropdown = ({ value, onChange }) => {
@@ -9,7 +11,6 @@ const CategoryDropdown = ({ value, onChange }) => {
     fetch("http://localhost:4242/categories")
       .then((res) => res.json())
       .then((data) => {
-        // Assuming the response has a structure like { data: [ { id, name }, ... ] }
         setCategories(data.data || []);
         setLoading(false);
       })
@@ -37,7 +38,6 @@ const CategoryDropdown = ({ value, onChange }) => {
 };
 
 export const MyPage = () => {
-  // 'profile' for "Min Profil" and 'ads' for "Mine annoncer"
   const [activeTab, setActiveTab] = useState("profile");
   const [profileData, setProfileData] = useState({
     name: "",
@@ -49,7 +49,6 @@ export const MyPage = () => {
   const [ads, setAds] = useState([]);
   const [error, setError] = useState(null);
 
-  // Product form state
   const [productFormData, setProductFormData] = useState({
     name: "",
     image: "",
@@ -59,7 +58,6 @@ export const MyPage = () => {
   });
   const [productMessage, setProductMessage] = useState(null);
 
-  // Fetch user profile data when component mounts
   useEffect(() => {
     fetch("/users")
       .then((res) => res.json())
@@ -67,7 +65,6 @@ export const MyPage = () => {
       .catch((err) => setError(err));
   }, []);
 
-  // When switching to "Mine annoncer", fetch the ads
   useEffect(() => {
     if (activeTab === "ads") {
       fetch("/users/ads")
@@ -113,7 +110,6 @@ export const MyPage = () => {
       .then((res) => {
         if (!res.ok) throw new Error("Sletning mislykkedes");
         alert("Profil slettet");
-        // Handle post-delete logic (e.g., redirect)
       })
       .catch((err) => {
         console.error(err);
@@ -127,7 +123,6 @@ export const MyPage = () => {
     fetch(`/ads/${adId}`, { method: "DELETE" })
       .then((res) => {
         if (!res.ok) throw new Error("Sletning mislykkedes");
-        // Remove the ad from state after successful deletion
         setAds((prev) => prev.filter((ad) => ad.id !== adId));
       })
       .catch((err) => {
@@ -136,7 +131,6 @@ export const MyPage = () => {
       });
   };
 
-  // Product form handlers
   const handleProductInputChange = (e) => {
     const { name, value } = e.target;
     setProductFormData((prev) => ({ ...prev, [name]: value }));
@@ -148,7 +142,7 @@ export const MyPage = () => {
 
   const handleProductSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token"); // Assumes token is stored here
+    const token = localStorage.getItem("token");
     try {
       const res = await fetch("http://localhost:4242/products", {
         method: "POST",
@@ -167,17 +161,14 @@ export const MyPage = () => {
         }
         throw new Error(errorMsg);
       }
-      // Only try to parse JSON if it exists
       if (contentType && contentType.includes("application/json")) {
         await res.json();
       }
       setProductMessage("Produkt oprettet!");
-      // Optionally refresh the ads list with the new product
       fetch("/users/ads")
         .then((res) => res.json())
         .then((data) => setAds(data))
         .catch((err) => setError(err));
-      // Clear form fields
       setProductFormData({
         name: "",
         image: "",
@@ -191,9 +182,8 @@ export const MyPage = () => {
   };
 
   return (
-    <div className="my-component">
-      {/* Tab switcher */}
-      <div className="tab-switcher">
+    <div className={s.my_page}>
+      <div className={s.tabSwitcher}>
         <button
           onClick={() => setActiveTab("profile")}
           style={{
@@ -277,7 +267,6 @@ export const MyPage = () => {
         <div className="ads-section">
           <h2>Mine annoncer</h2>
 
-          {/* Product Creation Form */}
           <div className="create-product-form">
             <h3>Opret produkt</h3>
             {productMessage && <p>{productMessage}</p>}
@@ -332,7 +321,6 @@ export const MyPage = () => {
             </form>
           </div>
 
-          {/* List of Ads */}
           {ads.length === 0 ? (
             <p>Ingen annoncer fundet.</p>
           ) : (
@@ -340,7 +328,6 @@ export const MyPage = () => {
               {ads.map((ad) => (
                 <li key={ad.id}>
                   <span>{ad.title}</span>
-                  {/* Link til produktsiden (fx via routing) */}
                   <a href={`/produkt/${ad.id}`}>Gå til annoncen</a>
                   <button onClick={() => handleAdDelete(ad.id)}>
                     Slet annoncen

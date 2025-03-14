@@ -1,0 +1,54 @@
+@use "/src/styles/variables" as v;
+
+.login, .sign_up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: v.$background;
+  form {
+    background-color: v.$white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: v.$black;
+  }
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid v.$interactive;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: v.$black;
+    background-color: v.$background;
+
+    &:focus {
+      border-color: v.$interactive;
+      outline: none;
+    }
+  }
+  button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: v.$interactive;
+    color: v.$white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  p {
+    color: v.$danger;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+}

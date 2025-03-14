@@ -1,0 +1,29 @@
+@use "/src/styles/variables" as v;
+
+.loading {
+  animation: spin 2s ease-in-out infinite;
+  border: 1rem solid v.$white;
+  border-top: v.$accent;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 30vw;
+  -webkit-animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

@@ -29,7 +29,10 @@ export const Footer = () => {
           besluttet at en del af overskuddet går direkte til verdensmål nr. 13;
           Klimahandling
         </p>
-        <NavLink target="_blank" to="https://www.verdensmaalene.dk/fakta/verdensmaalene">
+        <NavLink
+          target="_blank"
+          to="https://www.verdensmaalene.dk/fakta/verdensmaalene"
+        >
           Læs mere om verdensmålene her
         </NavLink>
       </section>

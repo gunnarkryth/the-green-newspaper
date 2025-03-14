@@ -1,3 +1,5 @@
+import s from "./Login.module.scss";
+
 import React, { useState } from "react";
 import { useUser } from "../../context/UserContext";
 
@@ -21,12 +23,11 @@ export const Login = () => {
     } else {
       setError(null);
       console.log("Login successful");
-      // Additional actions (e.g., navigation) can be added here.
     }
   };
 
   return (
-    <section>
+    <section className={s.login}>
       <form onSubmit={handleLogin}>
         <label htmlFor="username">Email</label>
         <input

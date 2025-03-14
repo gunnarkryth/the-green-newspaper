@@ -1,3 +1,5 @@
+import s from "./SignUp.module.scss";
+
 import React, { useState } from "react";
 
 export const SignUp = () => {
@@ -43,7 +45,7 @@ export const SignUp = () => {
   };
 
   return (
-    <section>
+    <section className={s.sign_up}>
       <h2>Sign Up</h2>
       <form onSubmit={handleSignUp}>
         <label htmlFor="email">Email</label>
