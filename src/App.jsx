@@ -5,6 +5,7 @@ import { GlobalLayout } from "./layout/GlobalLayout";
 import { Home } from "./pages/Home";
 import { CategoryPage } from "./pages/CategoryPage";
 import { ProductDetails } from "./pages/ProductDetails";
+import { Profile } from "./pages/Profile";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<GlobalLayout />}>
             <Route index element={<Home />} />
-            <Route path="/category/:category" element={<CategoryPage />} />
-            <Route path="/product/:slug" element={<ProductDetails />} />
-            <Route />
+            <Route path="category/:category" element={<CategoryPage />} />
+            <Route path="product/:slug" element={<ProductDetails />} />
+            {/* <Route /> */}
+            <Route path="profile" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>
