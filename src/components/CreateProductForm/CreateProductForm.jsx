@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CreateProductForm = () => {
+export const CreateProductForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     image: "",
@@ -39,7 +39,7 @@ const CreateProductForm = () => {
   };
 
   return (
-    <div className="create-product-form">
+    <div>
       <h2>Create Product</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
@@ -97,5 +97,3 @@ const CreateProductForm = () => {
     </div>
   );
 };
-
-export default CreateProductForm;
